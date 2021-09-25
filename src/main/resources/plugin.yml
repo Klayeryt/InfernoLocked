@@ -1,0 +1,8 @@
+name: InfernoLocked
+version: '${project.version}'
+main: projectinferno.ru.infernolocked.InfernoLocked
+authors: [ Klayeryt ]
+description: For server projectinferno.ru
+website: https://projectinferno.ru
+commands:
+  blocklimiter: {}
