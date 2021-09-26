@@ -13,18 +13,18 @@ public class EventListener implements Listener {
 
     public void onSetBlock(BlockPlaceEvent event) {
         Player p = event.getPlayer();
-        Material limited = Material.GOLD_BLOCK;
+        Material limited = Material.GOLD_BLOCK; // Блок для запрета
         Block set = event.getBlockPlaced();
         if(set.getType() != limited){ return; }
-        int maxnumber = 10;
-        int number = 0;
+        int maxnumber = 10; // Блоков на чанк
+        int number = 0; // Начальное число блоков
         Chunk checkchunk = set.getLocation().getChunk();
         for (int x = 0; x < 16; ){
             for (int y = 0; y < 128; ){
                 for (int z = 0; z < 16; ){
                     Material check = checkchunk.getBlock(x, y, z).getType();
                     if(check.equals(limited)){number++;}
-                    //log.info(x + " " + y + " " + z + " : " + check.toString());
+                    //log.info(x + " " + y + " " + z + " : " + check.toString()); // <== Если хотите чтобы когда ставили блоки писало в консоль на каких кордах
                     z++;
                 }
                 y++;
